@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Shanji Aljabir — Informatics fresh graduate with foundational IT knowledge and professional experience in graphic design, filmmaking, and commercial video directing.">
+  <meta name="theme-color" content="#f2f0e9">
+  <title>Shanji Aljabir — IT & Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2f0e9; --ink: #151714; --muted: #676b64; --line: #c9c7bf;
+      --accent: #3157ff; --acid: #caff48; --white: #fff; --radius: 22px;
+      --shadow: 0 28px 70px rgba(21, 23, 20, .11);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 112px 0; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+    .section-title { max-width: 760px; margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(2.25rem, 5vw, 4.7rem); line-height: .98; letter-spacing: -.055em; }
+    .section-head { display: flex; justify-content: space-between; gap: 36px; align-items: end; margin-bottom: 56px; }
+    .section-intro { max-width: 410px; margin: 0; color: var(--muted); font-size: 1.02rem; }
+
+    .nav-shell { position: fixed; z-index: 50; top: 18px; left: 50%; transform: translateX(-50%); width: min(1180px, calc(100% - 28px)); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 66px; padding: 0 12px 0 22px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: rgba(21,23,20,.92); color: var(--white); box-shadow: 0 10px 40px rgba(0,0,0,.17); backdrop-filter: blur(14px); }
+    .brand { font-family: "Manrope", sans-serif; font-size: 1.03rem; font-weight: 800; letter-spacing: -.03em; }
+    .brand span { color: var(--acid); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: .8rem; font-weight: 600; }
+    .nav-links a { color: #c9cbc6; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { padding: 12px 18px; border-radius: 999px; background: var(--acid); color: var(--ink) !important; }
+
+    .hero { min-height: 100svh; padding: 138px 0 48px; display: flex; align-items: end; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(280px,.7fr); gap: 70px; align-items: end; }
+    .availability { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 28px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .availability i { width: 8px; height: 8px; border-radius: 50%; background: #51a957; box-shadow: 0 0 0 5px rgba(81,169,87,.13); }
+    .hero h1 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(4rem,9.7vw,8.8rem); font-weight: 800; letter-spacing: -.078em; line-height: .82; }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy { max-width: 655px; margin: 34px 0 0; color: var(--muted); font-size: clamp(1.05rem,1.6vw,1.3rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 21px; border: 1px solid var(--ink); border-radius: 999px; font-weight: 700; transition: transform .2s ease, background .2s ease, color .2s ease; }
+    .button:hover { transform: translateY(-3px); }
+    .button.primary { background: var(--ink); color: var(--white); }
+    .button.secondary { background: transparent; }
+    .portrait-card { position: relative; }
+    .portrait-frame { aspect-ratio: .78; overflow: hidden; border-radius: 160px 160px 24px 24px; background: #d7d5cd; box-shadow: var(--shadow); }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 24%; filter: saturate(.82) contrast(1.03); }
+    .portrait-note { position: absolute; right: -28px; bottom: 42px; width: 132px; aspect-ratio: 1; display: grid; place-items: center; padding: 18px; border-radius: 50%; background: var(--acid); font-family: "Manrope", sans-serif; font-size: .77rem; font-weight: 800; line-height: 1.25; text-align: center; text-transform: uppercase; transform: rotate(8deg); }
+
+    .profile { background: var(--ink); color: var(--white); }
+    .profile .eyebrow { color: #9fa39c; }
+    .profile-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 90px; align-items: start; }
+    .profile-quote { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(1.8rem,3.3vw,3.5rem); line-height: 1.08; letter-spacing: -.045em; }
+    .profile-quote span { color: var(--acid); }
+    .profile-copy { color: #b5b8b2; font-size: 1.08rem; }
+    .profile-copy p { margin: 0 0 22px; }
+    .quick-facts { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; margin-top: 46px; background: #343632; border: 1px solid #343632; }
+    .fact { min-height: 122px; padding: 24px; background: var(--ink); }
+    .fact strong { display: block; margin-bottom: 8px; color: var(--acid); font-family: "Manrope", sans-serif; font-size: 1.5rem; }
+    .fact span { color: #949891; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
+
+    .skills-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; }
+    .skill-panel { padding: 36px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.26); }
+    .skill-panel.dark { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .panel-top { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 30px; }
+    .panel-top h3 { margin: 0; font-family: "Manrope", sans-serif; font-size: 1.55rem; letter-spacing: -.035em; }
+    .panel-no { color: var(--muted); font-weight: 700; font-size: .75rem; letter-spacing: .1em; }
+    .dark .panel-no { color: #777b74; }
+    .hard-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+    .hard-skill { min-height: 124px; padding: 20px; border-radius: 15px; background: var(--white); }
+    .hard-skill b { display: block; margin-bottom: 10px; font-family: "Manrope", sans-serif; font-size: 1rem; line-height: 1.3; }
+    .hard-skill small { color: var(--muted); font-size: .8rem; }
+    .soft-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .soft-skill { padding: 13px 16px; border: 1px solid #3d403b; border-radius: 999px; color: #d2d5cf; font-size: .9rem; }
+    .soft-note { margin: 30px 0 0; padding-top: 26px; border-top: 1px solid #353833; color: #8f938c; font-size: .9rem; }
+
+    .work { background: #dfddd5; }
+    .work-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 22px; }
+    .project { position: relative; overflow: hidden; border-radius: var(--radius); background: #d1cfc8; }
+    .project:nth-child(1) { grid-column: span 7; }
+    .project:nth-child(2) { grid-column: span 5; }
+    .project:nth-child(3), .project:nth-child(4), .project:nth-child(5) { grid-column: span 4; }
+    .project-media { position: relative; aspect-ratio: 1.25; overflow: hidden; }
+    .project:nth-child(2) .project-media { aspect-ratio: .92; }
+    .project:nth-child(3) .project-media, .project:nth-child(4) .project-media, .project:nth-child(5) .project-media { aspect-ratio: 1.05; }
+    .project img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.65,.25,1); }
+    .project:hover img { transform: scale(1.035); }
+    .project-meta { display: flex; justify-content: space-between; align-items: start; gap: 20px; padding: 23px 24px 25px; background: var(--paper); }
+    .project-meta h3 { margin: 0 0 5px; font-family: "Manrope", sans-serif; font-size: 1.1rem; letter-spacing: -.025em; }
+    .project-meta p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .project-link { flex: 0 0 auto; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--white); transition: background .2s ease, transform .2s ease; }
+    .project:hover .project-link { background: var(--accent); transform: rotate(-10deg); }
+    .design-strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(205px,1fr); gap: 14px; margin-top: 22px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+    .design-card { scroll-snap-align: start; }
+    .design-card img { aspect-ratio: 4/5; width: 100%; object-fit: cover; border-radius: 15px; }
+    .design-card p { margin: 11px 4px 0; color: var(--muted); font-size: .78rem; }
+
+    .career-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 84px; }
+    .career-sticky { position: sticky; top: 120px; align-self: start; }
+    .career-list { border-top: 1px solid var(--line); }
+    .career-item { display: grid; grid-template-columns: 130px 1fr; gap: 28px; padding: 32px 0; border-bottom: 1px solid var(--line); }
+    .career-date { color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .career-item h3 { margin: 0 0 6px; font-family: "Manrope", sans-serif; font-size: 1.2rem; letter-spacing: -.03em; }
+    .career-item .role { margin: 0 0 12px; color: var(--accent); font-size: .9rem; font-weight: 700; }
+    .career-item .desc { margin: 0; color: var(--muted); font-size: .92rem; }
+    .education { margin-top: 70px; }
+    .education h2 { margin: 0 0 20px; font-family: "Manrope", sans-serif; font-size: 1.55rem; letter-spacing: -.03em; }
+
+    .contact { padding: 110px 0 42px; background: var(--accent); color: var(--white); }
+    .contact-top { display: grid; grid-template-columns: 1.25fr .75fr; gap: 72px; align-items: end; }
+    .contact h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(3.6rem,8vw,8rem); line-height: .86; letter-spacing: -.075em; }
+    .contact h2 span { color: var(--acid); }
+    .contact-side { padding-bottom: 5px; }
+    .contact-side p { margin: 0 0 28px; color: #d8dfff; font-size: 1.02rem; }
+    .contact .button { border-color: var(--white); background: var(--white); color: var(--ink); }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 70px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.3); font-size: .88rem; font-weight: 700; }
+    .contact-links a { border-bottom: 1px solid transparent; }
+    .contact-links a:hover { border-color: currentColor; }
+    .copyright { margin-left: auto; color: #bdc8ff; font-weight: 400; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 920px) {
+      .section { padding: 88px 0; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-grid { grid-template-columns: 1fr .55fr; gap: 34px; }
+      .portrait-note { right: -10px; width: 105px; }
+      .profile-grid, .career-grid { grid-template-columns: 1fr; gap: 48px; }
+      .skills-layout { grid-template-columns: 1fr; }
+      .career-sticky { position: static; }
+      .contact-top { grid-template-columns: 1fr; gap: 44px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(100% - 28px,1180px); }
+      .nav-shell { top: 10px; }
+      .nav { min-height: 58px; padding-left: 18px; }
+      .nav-cta { padding: 10px 15px; }
+      .hero { padding-top: 114px; align-items: center; }
+      .hero-grid { grid-template-columns: 1fr; gap: 45px; }
+      .hero h1 { font-size: clamp(3.75rem,19vw,6rem); }
+      .portrait-card { width: 78%; margin: 0 auto; }
+      .section-head { display: block; margin-bottom: 38px; }
+      .section-intro { margin-top: 20px; }
+      .quick-facts { grid-template-columns: 1fr; }
+      .fact { min-height: auto; }
+      .skill-panel { padding: 25px; }
+      .hard-list { grid-template-columns: 1fr; }
+      .hard-skill { min-height: auto; }
+      .project:nth-child(n) { grid-column: span 12; }
+      .project:nth-child(n) .project-media { aspect-ratio: 1.05; }
+      .career-item { grid-template-columns: 1fr; gap: 10px; }
+      .contact { padding-top: 80px; }
+      .contact-links { display: grid; }
+      .copyright { margin: 18px 0 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-shell">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">Shanji<span>.</span></a>
+      <div class="nav-links">
+        <a href="#profile">Profile</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact">Let's talk</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="availability"><i aria-hidden="true"></i> Open to entry-level IT & creative opportunities</div>
+          <h1>Creative mind.<br><em>Technical roots.</em></h1>
+          <p class="hero-copy">I’m Shanji Aljabir, an Informatics graduate starting my career in IT. I also work across graphic design, film, video editing, and commercial directing—experience that has taught me how to solve problems, work with people, and turn ideas into finished work.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work">View selected work <span aria-hidden="true">↘</span></a>
+            <a class="button secondary" href="mailto:sanjialjabir@gmail.com">Email me</a>
+          </div>
+        </div>
+        <div class="portrait-card reveal">
+          <div class="portrait-frame"><img src="img-profile-sanji_3.png" alt="Portrait of Shanji Aljabir"></div>
+          <div class="portrait-note">Based in Banda Aceh, Indonesia</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section profile" id="profile">
+      <div class="wrap profile-grid">
+        <div class="reveal"><p class="eyebrow">Professional profile</p><h2 class="profile-quote">Starting in IT, bringing real <span>creative experience.</span></h2></div>
+        <div class="profile-copy reveal">
+          <p>I recently completed my Bachelor’s degree in Informatics and am now looking for an entry-level role in IT. University gave me a solid grounding in computer systems, networking, programming, web development, and troubleshooting. I’m keen to keep building those skills in a real working environment.</p>
+          <p>While studying, I built hands-on experience as a graphic designer, video editor, filmmaker, and director for commercial videos. Working with real briefs, teams, talent, and deadlines taught me how to listen, adapt, communicate clearly, and take ownership of the final result.</p>
+          <div class="quick-facts" aria-label="Professional highlights">
+            <div class="fact"><strong>Bachelor of Informatics</strong><span>Ready to begin a career in IT</span></div>
+            <div class="fact"><strong>Creative Professional</strong><span>Design, film, editing & direction</span></div>
+            <div class="fact"><strong>Director</strong><span>Commercial & narrative video</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">What I bring</p><h2 class="section-title">IT fundamentals, backed by real-world working habits.</h2></div>
+          <p class="section-intro">University gave me the technical basics. Creative work taught me how to handle deadlines, feedback, teamwork, and responsibility.</p>
+        </div>
+        <div class="skills-layout">
+          <article class="skill-panel reveal">
+            <div class="panel-top"><h3>Hard Skills</h3><span class="panel-no">01 / 02</span></div>
+            <div class="hard-list">
+              <div class="hard-skill"><b>Basic IT & Computer Systems</b><small>Foundational computer, software, and operating system concepts</small></div>
+              <div class="hard-skill"><b>Basic Networking</b><small>Introductory networking and connectivity concepts</small></div>
+              <div class="hard-skill"><b>Technical Troubleshooting</b><small>Identifying issues and working through structured solutions</small></div>
+              <div class="hard-skill"><b>Programming & Web Fundamentals</b><small>Basic logic, development, and web concepts</small></div>
+              <div class="hard-skill"><b>Graphic & Communication Design</b><small>Layout, campaign content, and visual information</small></div>
+              <div class="hard-skill"><b>Video Editing & Post-production</b><small>Structure, pacing, and visual finishing</small></div>
+              <div class="hard-skill"><b>Commercial Video Directing</b><small>Creative direction, talent coordination, and visual execution</small></div>
+              <div class="hard-skill"><b>Visual Storytelling</b><small>Explaining ideas clearly through image and motion</small></div>
+            </div>
+          </article>
+          <article class="skill-panel dark reveal">
+            <div class="panel-top"><h3>Soft Skills</h3><span class="panel-no">02 / 02</span></div>
+            <div class="soft-list">
+              <span class="soft-skill">Willingness to learn</span><span class="soft-skill">Analytical thinking</span><span class="soft-skill">Problem-solving</span><span class="soft-skill">Attention to detail</span><span class="soft-skill">Responsibility</span><span class="soft-skill">Clear communication</span><span class="soft-skill">Team collaboration</span><span class="soft-skill">Time management</span><span class="soft-skill">Adaptability</span>
+            </div>
+            <p class="soft-note">I’m comfortable asking questions when something isn’t clear, learning from feedback, and working closely with a team. Creative production has also taught me to stay calm under deadlines and be accountable for the final result.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Selected work</p><h2 class="section-title">Work across motion and design.</h2></div>
+          <p class="section-intro">Creative work that demonstrates structured execution, attention to detail, and the ability to communicate information clearly—including digital fraud awareness content.</p>
+        </div>
+        <div class="work-grid">
+          <a class="project reveal" href="https://www.instagram.com/shanjialjabir_/p/DcBYbbFE_nV/" target="_blank" rel="noopener noreferrer">
+            <div class="project-media"><img src="thumb-latest-director.jpg" alt="Still from Ini Bukan Brand New Day directed by Shanji Aljabir"></div>
+            <div class="project-meta"><div><h3>Ini Bukan Brand New Day</h3><p>Latest Project · Director · Narrative Film · 2026</p></div><span class="project-link" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="project reveal" href="https://www.instagram.com/reel/DWDO8i8ko_D/" target="_blank" rel="noopener noreferrer">
+            <div class="project-media"><img src="thumb-video1.jpg" alt="Still from Bank Aceh Eid short film 2026"></div>
+            <div class="project-meta"><div><h3>Bank Aceh Eid Short Film</h3><p>Short Film · Commercial Storytelling · 2026</p></div><span class="project-link" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="project reveal" href="https://www.instagram.com/reel/DHz0OWGSaD_/" target="_blank" rel="noopener noreferrer">
+            <div class="project-media"><img src="thumb-video2.jpg" alt="Still from Bank Aceh Eid short film 2025"></div>
+            <div class="project-meta"><div><h3>Bank Aceh Eid Story</h3><p>Short Film · Brand Content · 2025</p></div><span class="project-link" aria-hidden="true">↗</span></div>
+          </a>
+          <a class="project reveal" href="https://www.instagram.com/reel/DJTviwrsuZ8/" target="_blank" rel="noopener noreferrer">
+            <div class="project-media"><img src="thumb-video3.jpg" alt="Still from Sound of Soul music video"></div>
+            <div class="project-meta"><div><h3>Sound of Soul — Pamungkas</h3><p>Music Video · Cinematography · Directing</p></div><span class="project-link" aria-hidden="true">↗</span></div>
+          </a>
+          <article class="project reveal">
+            <div class="project-media"><img src="01_Hut RI Bank Aceh.jpg" alt="Bank Aceh Independence Day campaign design"></div>
+            <div class="project-meta"><div><h3>Bank Aceh Campaign Visuals</h3><p>Social Media Design · Campaign Communication</p></div><span class="project-link" aria-hidden="true">＋</span></div>
+          </article>
+        </div>
+        <div class="design-strip" aria-label="More graphic design work">
+          <div class="design-card"><img src="02_Kartu Debit Bank Aceh.jpg" alt="Bank Aceh expired debit card information design"><p>Debit Card Information · 2024</p></div>
+          <div class="design-card"><img src="03_Libur dan Cuti Bersama Bank Aceh.jpg" alt="Bank Aceh holiday information design"><p>Holiday Information · 2024</p></div>
+          <div class="design-card"><img src="05_Fraud Awareness Bank Aceh.jpg" alt="Bank Aceh fraud awareness design"><p>Fraud Awareness · 2024</p></div>
+          <div class="design-card"><img src="06_Hari Kartini Bank Aceh.jpg" alt="Bank Aceh Kartini Day design"><p>Kartini Day · 2024</p></div>
+          <div class="design-card"><img src="09_Action Mobile Bank Aceh.jpg" alt="Bank Aceh Action Mobile promotion design"><p>Action Mobile Campaign · 2023</p></div>
+          <div class="design-card"><img src="10_Bayar Listrik Bank Aceh.jpg" alt="Bank Aceh electricity payment promotion design"><p>Utility Payment Campaign · 2024</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap career-grid">
+        <div class="career-sticky reveal"><p class="eyebrow">Experience & education</p><h2 class="section-title">Built through real creative practice.</h2></div>
+        <div>
+          <div class="career-list reveal">
+            <article class="career-item"><div class="career-date">Aug 2022—Now</div><div><h3>PT Bank Aceh Syariah</h3><p class="role">Graphic Designer & Public Relations Assistant</p><p class="desc">Creating public communication and digital campaign visuals, including fraud awareness, digital banking information, and customer education content.</p></div></article>
+            <article class="career-item"><div class="career-date">Sep 2023—Now</div><div><h3>Freelance · Banda Aceh</h3><p class="role">Video Director, Editor & Film Producer</p><p class="desc">Directing commercial and narrative videos, coordinating creative production, and developing visual stories from concept through editing and final delivery.</p></div></article>
+          </div>
+          <div class="education reveal">
+            <h2>Education</h2>
+            <div class="career-list">
+              <article class="career-item"><div class="career-date">2021—2025</div><div><h3>Universitas Ubudiyah Indonesia</h3><p class="role">Bachelor of Informatics</p></div></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-top">
+        <h2>Let’s make<br>work that <span>matters.</span></h2>
+        <div class="contact-side"><p>I’m looking for an entry-level IT role where I can learn, contribute, and grow. I’m also open to creative projects in graphic design, video production, editing, and directing.</p><a class="button" href="mailto:sanjialjabir@gmail.com">sanjialjabir@gmail.com <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/shanji-aljabir-970375283" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://instagram.com/shanjialjabir_" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://linkin.bio/shanjialjabir" target="_blank" rel="noopener noreferrer">More links ↗</a>
+        <span class="copyright">© <span id="year">2026</span> Shanji Aljabir</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
+      items.forEach((item) => observer.observe(item));
+    } else { items.forEach((item) => item.classList.add('visible')); }
+  </script>
+</body>
+</html>
